@@ -414,6 +414,54 @@
                     </div>
                 </div>
 
+                <!-- Simulateur Interactif SolarBoost -->
+                <div class="simulator-card"
+                    style="margin-top: 2.5rem; margin-bottom: 2.5rem; padding: 2rem; background: rgba(2, 6, 23, 0.5); border: 1px solid var(--secondary); border-radius: 12px; box-shadow: 0 0 20px rgba(0, 229, 255, 0.05);">
+                    <h3 style="margin-top: 0; color: var(--secondary); display: flex; align-items: center; gap: 0.5rem;"
+                        class="sim-title">🧮 Simulateur de Gains : Bonus Cagnotte</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Testez l'impact de la taille de la batterie
+                        sur la Cagnotte finale du client sur 3 ans :</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <label for="battery-size" style="font-weight: 600; color: #cbd5e1;">Taille de la Batterie :
+                            <span id="battery-size-display" style="color: var(--primary); font-size: 1.3rem;">10</span>
+                            kWh</label>
+                        <input type="range" id="battery-size" min="5" max="14" step="1" value="10"
+                            style="width: 100%; cursor: pointer; accent-color: var(--primary);">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748b; font-weight: bold;">
+                            <span>5 kWh</span>
+                            <span>14 kWh</span>
+                        </div>
+                    </div>
+
+                    <div class="grid-3" style="margin-top: 1.5rem; gap: 1rem; text-align: center;">
+                        <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                            <div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">Bonus Quotidien
+                            </div>
+                            <div id="sim-daily"
+                                style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-top: 0.5rem;">1,00 €
+                            </div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                            <div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">Gain Annuel
+                            </div>
+                            <div id="sim-annual"
+                                style="font-size: 1.5rem; font-weight: 800; color: var(--success); margin-top: 0.5rem;">
+                                365 €</div>
+                        </div>
+                        <div
+                            style="background: rgba(240, 80, 248, 0.1); border: 1px solid var(--primary); padding: 1rem; border-radius: 8px;">
+                            <div
+                                style="font-size: 0.85rem; color: var(--primary); font-weight: bold; text-transform: uppercase;">
+                                Cagnotte sur 3 ans</div>
+                            <div id="sim-total"
+                                style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-top: 0.5rem;">
+                                1 095 €</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="info-box"
                     style="margin-top: 2rem; border-left-color: var(--primary); background: rgba(240, 80, 248, 0.05);">
                     <h4 style="color: var(--primary); margin-top: 0;">🎁 L'Argument de Vente Massue : 1 An d'Électricité

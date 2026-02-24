@@ -102,4 +102,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Simulateur de Gains SolarBoost
+    const batterySlider = document.getElementById('battery-size');
+    const batteryDisplay = document.getElementById('battery-size-display');
+    const simDaily = document.getElementById('sim-daily');
+    const simAnnual = document.getElementById('sim-annual');
+    const simTotal = document.getElementById('sim-total');
+
+    if (batterySlider) {
+        batterySlider.addEventListener('input', (e) => {
+            const size = parseFloat(e.target.value);
+            batteryDisplay.textContent = size;
+
+            // Ratio: On verse 0,10€ par jour par "kWh" de batterie (ex: 10 kWh = 1€/jour)
+            const daily = size * 0.10;
+            const annual = daily * 365;
+            const total = annual * 3;
+
+            // Format correct en euros (XX,XX € ou XXX €)
+            simDaily.textContent = daily.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+            simAnnual.textContent = Math.round(annual).toLocaleString('fr-FR') + ' €';
+            simTotal.textContent = Math.round(total).toLocaleString('fr-FR') + ' €';
+        });
+    }
 });
