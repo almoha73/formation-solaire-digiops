@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation DigiOps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="brand">
+            <span style="font-size: 1.5em; line-height: 1;">🐙</span> Octopus Energy
+        </div>
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+    </div>
+
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span style="font-size: 1.5em; line-height: 1;">🐙</span> Octopus Energy
+        </div>
+
+        <div class="nav-subtitle">Support de Formation</div>
+        <ul class="nav-menu">
+            <li><a href="#accueil" class="nav-item active" data-target="accueil">Accueil & Introduction</a></li>
+
+            <div class="nav-subtitle">Les Fondamentaux</div>
+            <li><a href="#bases" class="nav-item" data-target="bases">Les Bases (kWc, kWh, Taille)</a></li>
+            <li><a href="#autoconsommation" class="nav-item" data-target="autoconsommation">Autoconsommation &
+                    Surplus</a></li>
+            <li><a href="#collectif" class="nav-item" data-target="collectif">L'Autoconsommation Collective</a></li>
+            <li><a href="#technologies" class="nav-item" data-target="technologies">Technologies (Panneaux, Onduleurs,
+                    EMS)</a></li>
+
+            <div class="nav-subtitle">L'Offre Octopus</div>
+            <li><a href="#batteries" class="nav-item" data-target="batteries">Stockage & Batteries</a></li>
+            <li><a href="#offres" class="nav-item" data-target="offres">Solar Plus & Solar Boost</a></li>
+
+            <div class="nav-subtitle">Workflow & Rentabilité</div>
+            <li><a href="#rentabilite" class="nav-item" data-target="rentabilite">Aides, TVA & Recyclage</a></li>
+            <li><a href="#installation" class="nav-item" data-target="installation">Processus d'Installation</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- SECTION 1: ACCUEIL -->
+        <section id="accueil" class="content-section active">
+            <div class="hero-banner">
+                <img src="assets/solar_house_sunset.png" alt="Maison Solaire Octopus Energy">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="tag">Formation Interne Approfondie</span>
+                    <h1>Formation DigiOps</h1>
+                    <p style="font-size: 1.2rem; color: #e2e8f0; max-width: 600px;">Le guide exhaustif pour maîtriser le
+                        photovoltaïque, conseiller nos clients avec expertise et comprendre les moindres détails des
+                        offres Octopus Energy.</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>Introduction à la nouvelle activité Solaire</h2>
+                <p>Depuis février 2024, Octopus Energy France a lancé une nouvelle activité majeure : la
+                    <strong>commercialisation et l'installation de panneaux photovoltaïques</strong>.
+                </p>
+                <p>Cette activité s'inscrit dans notre objectif global de permettre à nos clients de maîtriser leur
+                    consommation, de consommer de la manière la plus locale possible et ainsi de participer activement à
+                    la transition énergétique globale.</p>
+
+                <div class="info-box">
+                    <p><strong>Notre force :</strong> Une offre transparente, sans coût caché et sans aucune
+                        <span class="tooltip">sous-traitance
+                            <span class="tooltiptext">Contrairement à la majorité du marché, Octopus emploie ses propres
+                                installateurs qualifiés pour garantir une fiabilité totale de l'installation au
+                                nettoyage.</span>
+                        </span>. <strong>L'ensemble des installateurs sont salariés d'Octopus Energy Services France
+                            (OESF)</strong>, ce qui nous permet de garantir une qualité d'exécution et un SAV
+                        irréprochable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 2: LES BASES -->
+        <section id="bases" class="content-section">
+            <div class="content-card">
+                <h2>Les Bases du Solaire</h2>
+                <p>Il est crucial de comprendre la différence entre les technologies et les unités de mesure que nous
+                    utilisons au quotidien avec nos clients pour être parfaitement crédible.</p>
+
+                <h3>Thermique VS Photovoltaïque</h3>
+                <div class="grid-2">
+                    <div class="stat-card">
+                        <span class="stat-icon">🌡️</span>
+                        <div class="stat-title">Solaire Thermique</div>
+                        <div class="stat-desc">Capte la chaleur du soleil via un <span class="tooltip">fluide
+                                caloporteur<span class="tooltiptext">Liquide antigel qui transporte la chaleur captée
+                                    vers le cumulus.</span></span>. Ne produit PAS d'électricité, sert exclusivement à
+                            chauffer l'eau ou les murs. Nous ne proposons pas cette technologie.</div>
+                    </div>
+                    <div class="stat-card" style="border-color: var(--primary);">
+                        <span class="stat-icon">⚡</span>
+                        <div class="stat-title">Solaire Photovoltaïque</div>
+                        <div class="stat-desc">Une réaction physique utilisant le rayonnement solaire pour exciter des
+                            électrons (et non la chaleur) pour produire de l'électricité. C'est notre cœur de métier.
+                        </div>
+                    </div>
+                </div>
+
+                <h3>L'Unité de Mesure : Le kWc (Kilowatt-crête)</h3>
+                <p>Le <strong>Watt crête (Wc)</strong> caractérise la puissance maximale d'un panneau dans des
+                    conditions d'ensoleillement et de température optimales. En pratique en un an, un panneau solaire
+                    standard de 375 Wc à 400 Wc produit en moyenne entre 270 kWh et 420 kWh selon la région géographique
+                    et l'inclinaison.</p>
+
+                <h3>Taille, Dimensions & Durée de Vie</h3>
+                <ul>
+                    <li><strong>Dimensions :</strong> Un panneau mesure environ 1m de large sur 1,7m de long. Son
+                        épaisseur est d'environ 4 cm pour un poids avoisinant les 18 kg.</li>
+                    <li><strong>A l'échelle du marché :</strong> En France, plus de 85% des installations pour
+                        particuliers font 3 kWc ou moins. Chez Octopus, nous installons majoritairement entre 3kWc et
+                        9kWc, et jusqu'à 36kWc.</li>
+                    <li><strong>Exemple type :</strong> Une installation de 3 kWc équivaut à environ 10 panneaux
+                        standard (soit 17 m² de toiture). Elle produit entre 2500 et 4000 kWh/an, couvrant la
+                        consommation hors-chauffage d'un foyer moyen.</li>
+                    <li><strong>Durée de vie :</strong> Supérieure à 30 ans. Octopus garantit les panneaux 25 ans, avec
+                        un rendement certifié de plus de 87% à 30 ans (la perte de rendement est d'environ de 1% par
+                        an).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 3: AUTOCONSOMMATION -->
+        <section id="autoconsommation" class="content-section">
+            <div class="content-card">
+                <h2>Autoconsommation & Gestion du Surplus</h2>
+
+                <img src="assets/autoconsommation_illustration.png" alt="Concept d'Autoconsommation"
+                    class="content-image">
+
+                <p>L'<span class="tooltip">autoconsommation<span class="tooltiptext">Fait de consommer sa propre
+                            production d'électricité, de manière individuelle ou collective.</span></span> est le fait
+                    de consommer tout ou partie de sa propre production d'électricité. La grande majorité de nos clients
+                    sont en "autoconsommation avec injection du surplus".</p>
+
+                <h3>Exemple Chiffré : Différence entre Autoconsommation et Autoproduction</h3>
+                <p>Ces deux termes sont la clé de la rentabilité. Bien qu'ils semblent similaires, ils mesurent deux
+                    choses très différentes. Prenons un <strong>exemple sur une journée</strong> :</p>
+
+                <div
+                    style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                    <div class="grid-2" style="margin: 0; gap: 1rem;">
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
+                            <p style="font-size: 0.9rem; margin-bottom:0.5rem;">Production Solaire Totale</p>
+                            <p style="font-size: 2rem; font-weight: 800; color: var(--secondary); margin-bottom:0;">10
+                                kWh</p>
+                            <p style="font-size: 0.8rem; font-style: italic;">(Ce que les panneaux ont créé)</p>
+                        </div>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
+                            <p style="font-size: 0.9rem; margin-bottom:0.5rem;">Consommation Totale de la Maison</p>
+                            <p style="font-size: 2rem; font-weight: 800; color: #fbbf24; margin-bottom:0;">15 kWh</p>
+                            <p style="font-size: 0.8rem; font-style: italic;">(Ce que la maison a utilisé sur 24h)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">Sur les 10 kWh produits, vous
+                    avez consommé <strong style="color: var(--success);">6 kWh</strong> directement. C'est ce chiffre
+                    qui est la clé !</p>
+
+                <div class="grid-2">
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--secondary);">
+                        <h4 style="margin-top:0; color:var(--secondary);">1. Le Taux d'Autoconsommation</h4>
+                        <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 1rem;">On se concentre sur la
+                            ligne de <strong>production</strong>.</p>
+                        <p><em>"Sur les 10 kWh produits, quelle part ai-je utilisée ?"</em></p>
+                        <p style="font-size: 1.5rem; font-weight: bold; text-align:center; padding-top: 1rem;">(6 / 10)
+                            = <span style="color:var(--secondary);">60%</span></p>
+                        <p style="font-size: 0.9rem; text-align:center;">Le reste (40% soit 4 kWh) est le surplus
+                            injecté sur le réseau. Sans batterie, ce taux stagne souvent entre 20 et 40%.</p>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #fbbf24;">
+                        <h4 style="margin-top:0; color:#fbbf24;">2. Le Taux d'Autoproduction</h4>
+                        <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 1rem;">On se concentre sur la
+                            ligne de <strong>consommation</strong>.</p>
+                        <p><em>"Sur les 15 kWh dont j'avais besoin, quelle part vient de mes panneaux ?"</em></p>
+                        <p style="font-size: 1.5rem; font-weight: bold; text-align:center; padding-top: 1rem;">(6 / 15)
+                            = <span style="color:#fbbf24;">40%</span></p>
+                        <p style="font-size: 0.9rem; text-align:center;">C'est le niveau d'autonomie. Je m'approvisionne
+                            encore à 60% auprès de mon fournisseur.</p>
+                    </div>
+                </div>
+
+                <h3>Réconcilier les courbes de Production et de Consommation</h3>
+                <p>Le grand défi du solaire : les panneaux produisent leur maximum à midi en été, tandis que le foyer
+                    français consomme son pic le matin et le soir en hiver. Plusieurs solutions :</p>
+                <ul>
+                    <li><strong>Stocker :</strong> Investir dans des batteries physiques domestiques (voir module
+                        suivant).</li>
+                    <li><strong>Piloter :</strong> Utiliser la domotique pour déclencher des appareils énergivores
+                        (lave-linge, ballon d'eau chaude) pendant les pics de soleil.</li>
+                    <li><strong>Revendre (Valoriser le Surplus) :</strong> Les contrats
+                        <span class="tooltip">EDF OA<span class="tooltiptext">EDF Obligation d'Achat : Service mandaté
+                                par l'État pour acheter l'électricité verte des particuliers à prix fixe pendant 20
+                                ans. (Aujourd'hui à 0,04 €/kWh en surplus).</span></span>
+                        ou via un acheteur alternatif (comme notre offre Octopus !). L'État fixe le tarif OA chaque
+                        trimestre via la CRE.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 3.5: AUTOCONSOMMATION COLLECTIVE -->
+        <section id="collectif" class="content-section">
+            <div class="content-card">
+                <h2>L'Autoconsommation Collective : Partager l'Énergie</h2>
+                <p>L'autoconsommation collective (ACC) permet à un groupe de producteurs et de consommateurs locaux de
+                    se partager l'électricité. Quel que soit le modèle, tous les participants doivent être rassemblés au
+                    sein d'une entité légale unique : la <strong><span class="tooltip">PMO<span
+                                class="tooltiptext">Personne Morale Organisatrice : Souvent une association ou
+                                coopérative gérant le contrat collectif avec Enedis.</span></span></strong>.</p>
+
+                <h3>Deux modèles d'organisation</h3>
+                <div class="grid-2">
+                    <div
+                        style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-light);">
+                        <h4 style="color: var(--primary);">Le "Soleil Central"</h4>
+                        <div style="font-size: 2.5rem; margin: 1rem 0;">🏢 ⚡ 🏘️🏘️</div>
+                        <p>Une seule grande installation centralisée (ex: le toit d'une école ou d'un supermarché)
+                            produit pour de nombreux consommateurs alentours.</p>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-light);">
+                        <h4 style="color: var(--secondary);">Le "Village Solaire"</h4>
+                        <div style="font-size: 2.5rem; margin: 1rem 0;">🏠 ↔️ 🏠 ↔️ 🏡</div>
+                        <p>Plusieurs maisons sont à la fois productrices et consommatrices. Elles mutualisent leurs
+                            surplus pour l'ensemble du groupe.</p>
+                    </div>
+                </div>
+
+                <h3>Le Fonctionnement Technique : Physique et Numérique</h3>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--secondary); font-size: 1.2rem;">1. Le Flux Physique</strong><br>
+                        Le surplus d'électricité est injecté sur le réseau public et, par les lois de la physique,
+                        consommé par les bâtiments les plus proches (membres du groupe ou non). Le réseau agit comme un
+                        grand "lac".
+                    </li>
+                    <li style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--primary); font-size: 1.2rem;">2. Le Flux des Données</strong><br>
+                        Toutes les 30 minutes, les compteurs Linky mesurent la production et la consommation. Enedis
+                        centralise ces données et "attribue" virtuellement la production locale aux consommateurs du
+                        groupe, selon la clé de répartition définie par la PMO.
+                    </li>
+                    <li style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--success); font-size: 1.2rem;">3. Facturation</strong><br>
+                        La part d'énergie qui vous est attribuée virtuellement n'est pas facturée par Octopus. Vous la
+                        payez directement à la PMO, à un tarif local défini entre les membres.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TECHNOLOGIES -->
+        <section id="technologies" class="content-section">
+            <div class="content-card">
+                <h2>Technologie : Panneaux & Onduleurs</h2>
+
+                <h3>Nos Panneaux Solaires</h3>
+                <p>Il faut être transparent : 90 à 95% des panneaux solaires installés en France sont de fabrication
+                    chinoise. Les cellules photovoltaïques proviennent quasi-exclusivement d'Asie. Octopus propose deux
+                    gammes :</p>
+                <ul>
+                    <li><strong>Gamme Standard :</strong> Panneaux asiatiques (Chine/Vietnam). C'est le meilleur rapport
+                        qualité/prix du marché mondial.</li>
+                    <li><strong>Gamme Française (Voltec Solar) :</strong> Une gamme environ 1000€ plus chère. Voltec
+                        Solar (et feu-Systovi) sont les "seuls" fabricants français (et non des marques re-badgées).
+                        Cela signifie qu'ils <em>assemblent</em> au moins 30% du panneau sur notre territoire.</li>
+                </ul>
+
+                <h3>L'Onduleur & le Système EMS</h3>
+                <p>Un panneau produit un "courant continu". L'onduleur a la lourde tâche de le réguler et de le
+                    transformer en "courant alternatif" compatible avec le réseau de la maison. Son rendement et sa
+                    fiabilité sont capitaux.</p>
+                <div class="info-box" style="margin-top: 1rem;">
+                    <p><strong>Le Système de Gestion Énergétique (EMS) :</strong> C'est le cerveau de l’installation. Ce
+                        boîtier électronique connecté optimise en continu la consommation. Il croise les données de
+                        production, de consommation (compteur Linky) et météo pour piloter automatiquement les appareils
+                        énergivores (ex: chauffer l'eau ou charger la voiture électrique uniquement quand le soleil
+                        brille).</p>
+                </div>
+
+                <div class="grid-2">
+                    <div class="stat-card">
+                        <img src="assets/micro_onduleur.png" style="width:100%; border-radius:8px; margin-bottom:1rem;"
+                            alt="Micro Onduleur">
+                        <div class="stat-title">Micro-onduleurs (ex: Enphase)</div>
+                        <div class="stat-desc">De petite taille, attachés directement derrière chaque panneau.
+                            <strong>Chaque panneau est indépendant</strong>. Si l'un est à l'ombre d'une cheminée, les
+                            autres produisent à 100%. Particulièrement recommandé pour le résidentiel.
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">🔋</span>
+                        <div class="stat-title">Onduleur Hybride de Chaîne (ex: Huawei)</div>
+                        <div class="stat-desc">Un gros boîtier unique recueille l'électricité de toute la grappe
+                            (chaîne). Obligatoire si le client souhaite coupler son installation avec une batterie pour
+                            piloter charges et décharges efficacement.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: BATTERIES -->
+        <section id="batteries" class="content-section">
+            <div class="content-card">
+                <h2>Stockage & Batteries : Changer de Dimension</h2>
+
+                <div class="grid-2" style="align-items: center;">
+                    <div>
+                        <p>Les tarifs de rachat étatiques ayant tendance à baisser, l'installation d'une <span
+                                class="tooltip">batterie physique<span class="tooltiptext">Batterie au Lithium Fer
+                                    Phosphate (LFP), d'une grande durabilité (>6000 cycles) avec un risque incendie
+                                    nul.</span></span> devient l'atout maître de la rentabilité.</p>
+
+                        <div class="info-box">
+                            <p><strong>L'Impact massif de la batterie :</strong> Une installation classique sans
+                                batterie atteint ~35% d'autoconsommation. <strong>Avec une batterie de 5kWh à 10kWh, ce
+                                    taux bondit jusqu'à 80% !</strong> C'est la garantie de soulager drastiquement sa
+                                facture nocturne.</p>
+                        </div>
+
+                        <h3>Le Pilotage Avancé Octopus</h3>
+                        <p>Non seulement nous stockons, mais nous pilotons intelligemment :</p>
+                        <ul>
+                            <li><strong>Pince ampèremétrique :</strong> Matériel posé sur le <span
+                                    class="tooltip">compteur Linky<span class="tooltiptext">Le compteur intelligent et
+                                        communicant d'Enedis. Indispensable pour l'autoconsommation (comptabilise
+                                        électricité soutirée ET injectée).</span></span>. Dès qu'elle détecte une
+                                injection sortante (surplus), elle "ouvre" la batterie pour stocker.</li>
+                            <li><strong>Gestion Dynamique (par API) :</strong> Octopus recharge la batterie l'hiver
+                                pendant les Heures Super Creuses la nuit pour s'en servir aux heures de pointes. Du pur
+                                génie tarifaire.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="assets/batterie_domestique.png" alt="Batterie Domestique Octopus"
+                            class="content-image"
+                            style="margin: 0; border-radius: 12px; box-shadow: 0 4px 25px rgba(240, 80, 248, 0.2);">
+                    </div>
+                </div>
+
+                <h3>Le Piège des "Batteries Virtuelles"</h3>
+                <p>Octopus <strong>ne propose PAS</strong> de batterie virtuelle. Derrière ce terme marketing très
+                    séduisant ("Je stocke mon énergie dans le Cloud"), <strong>rien n'est stocké</strong>. L'énergie est
+                    injectée en direct sur le réseau public à midi, et le fournisseur "prête" un crédit au client le
+                    soir, mais en facturant : le coût de l'abonnement mensuel, le coût d'acheminement réseau (le TURPE)
+                    et les taxes.</p>
+                <p>En batterie virtuelle, le client reste en réalité dépendant à 100% du réseau. De plus, il perd
+                    souvent le droit aux aides de l'État et aux rachats EDF OA.</p>
+
+            </div>
+        </section>
+
+        <!-- SECTION 6: OFFRES OCTOPUS -->
+        <section id="offres" class="content-section">
+            <div class="content-card">
+                <h2>Nos Séries Phares : L'Évolution vers SolarBoost</h2>
+                <p>Depuis le début de l'année 2026, Octopus Energy amorce une transition majeure de son offre historique
+                    "Solar Plus" vers une offre ultra-innovante centrée sur la tarification dynamique de la batterie :
+                    <strong>SolarBoost</strong>.
+                </p>
+
+                <div class="grid-2" style="margin-top: 2rem;">
+                    <div
+                        style="border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 12px; background: rgba(255, 255, 255, 0.02);">
+                        <h3 style="margin-top: 0; color: #94a3b8;">L'Historique : Solar Plus</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem;">L'offre de lancement, désormais en fin de
+                            commercialisation.</p>
+                        <ul style="font-size: 0.9rem; color: #cbd5e1;">
+                            <li>Tarif de fourniture à -3% sous le TRV.</li>
+                            <li>428 heures creuses supplémentaires par an (activation en journée l'été).</li>
+                            <li><strong>Rachat fort du surplus :</strong> 0,13€/kWh bloqué sur 3 ans.</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        style="border: 1px solid var(--success); padding: 1.5rem; border-radius: 12px; background: rgba(16, 185, 129, 0.1); box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);">
+                        <h3 style="margin-top: 0; color: var(--success);">🟢 Le Nouveau "Game Changer" : SolarBoost</h3>
+                        <p style="font-size: 0.95rem; font-weight: 600;">La première offre combinant rachat de surplus
+                            ET pilotage intelligent de la batterie.</p>
+                        <ul style="font-size: 0.95rem;">
+                            <li><strong>Tarif d'électricité :</strong> Fixe sur 3 ans au prix du TRV.</li>
+                            <li><strong>Rachat du surplus :</strong> Aligné au marché à 0,04€/kWh (bloqué 3 ans, par
+                                virement annuel).</li>
+                            <li><strong>Bonus de Pilotage Quotidien :</strong> Octopus reverse une "cagnotte" chaque
+                                jour où la batterie est prête à aider le réseau. <em>(Exemple : 1€ / jour de gagné pour
+                                    une batterie 10kWh, soit un gain net garanti de 1095€ sur 3 ans !)</em>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box"
+                    style="margin-top: 2rem; border-left-color: var(--primary); background: rgba(240, 80, 248, 0.05);">
+                    <h4 style="color: var(--primary); margin-top: 0;">🎁 L'Argument de Vente Massue : 1 An d'Électricité
+                        OFFERT</h4>
+                    <p>Pour les clients SolarBoost atteignant un <span class="tooltip">Taux de couverture minimal de
+                            80%<span class="tooltiptext">Équivalent à un plafond de 125% de la production théorique
+                                annuelle. Ex: pour 6 kWc installés, on couvre jusqu'à 8250 kWh consommés.</span></span>,
+                        Octopus Energy s'engage à <strong>payer l'intégralité de leurs factures</strong> d'électricité
+                        sur les 12 premiers mois suivant l'installation de leurs panneaux !</p>
+                </div>
+
+                <h3 style="margin-top: 2.5rem;">Éligibilité à SolarBoost</h3>
+                <p>Pour souscrire le client à cette offre exceptionnelle, le Ops doit vérifier 4 critères obligatoires :
+                </p>
+                <ul>
+                    <li>Le client doit être en <strong>fourniture d'électricité chez Octopus Energy</strong>.</li>
+                    <li>Il doit posséder une <strong>batterie compatible</strong> (marques Huawei ou Enphase à ce jour).
+                    </li>
+                    <li>La <strong>taille de la batterie</strong> (en kWh) doit être supérieure ou égale à la puissance
+                        de l'installation (en kWc). <em>Exemple : Batterie 7 kWh obligatoire pour du 6 kWc.</em></li>
+                    <li>Le client <strong>autorise contractuellement</strong> le pilotage de sa batterie (pairage sur
+                        l'application Octopus).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 7: RENTABILITE & AIDES -->
+        <section id="rentabilite" class="content-section">
+            <div class="content-card">
+                <h2>L'Économie d'un projet Solaire : Avantages & Fiscalité</h2>
+                <p>La question numéro un de nos clients : "Quel bénéfice j'en tire ?". Et à juste titre !</p>
+
+                <h3>Les 3 grands avantages économiques</h3>
+                <div class="grid-3">
+                    <div
+                        style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="margin-top:0; color: var(--secondary);">💰 Rentabilité</h4>
+                        <p style="font-size: 0.9rem;">Une installation 3 kWc coûte entre 8000 et 12000€. Avec nos
+                            offres, le seuil de rentabilité est atteint entre <strong>7 à 8 ans</strong> dans le Sud et
+                            <strong>9 à 10 ans</strong> dans le Nord.
+                        </p>
+                    </div>
+                    <div
+                        style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="margin-top:0; color: var(--success);">🌍 Écologie</h4>
+                        <p style="font-size: 0.9rem;">Une installation de 3 kWc évite l'émission de plus de <strong>25
+                                tonnes de CO₂</strong> sur sa durée de vie (25 ans).</p>
+                    </div>
+                    <div
+                        style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="margin-top:0; color: #fbbf24;">🏠 Valorisation Immobilière</h4>
+                        <p style="font-size: 0.9rem;">Une maison équipée gagne <strong>3 à 5 % de valeur</strong> à la
+                            revente et obtient une bien meilleure étiquette au DPE.</p>
+                    </div>
+                </div>
+
+                <h3>Les Subventions de l'État</h3>
+                <ul>
+                    <li><strong>La Prime à l'autoconsommation :</strong> Versée l'année suivant l'installation, sans
+                        aucune condition de revenus. Elle est de <strong>80 € / kWc </strong>(soit de 240 à 300€ environ
+                        sur 3kWc suivant les révisions). Le client doit impérativement vendre le surplus.</li>
+                    <li><strong>Le contrat EDF OA :</strong> Vente du surplus garanti 20 ans (tarif fixe fixé par l'Eta
+                        via la convention CRAE : <strong>0,04 €/kWh</strong>).</li>
+                </ul>
+
+                <h3>La subtilité de la TVA Solaire en 2026</h3>
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Taux de TVA</th>
+                            <th>Les Conditions (Cumulatives !)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>20 %</strong> (Taux Normal)</td>
+                            <td>Soumis d'office si : Logement neuf (< 2 ans), ou Installation dépassant les 9 kWc, ou
+                                    Projet réalisé sans artisan <span class="tooltip">RGE<span
+                                        class="tooltiptext">Reconnu Garant de l'Environnement. Certification de l'État
+                                        que toutes nos équipes possèdent.</span></span>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10 %</strong> (Intermédiaire)</td>
+                            <td>Logement de plus de 2 ans <strong>ET</strong> Puissance minime (≤ 3 kWc)
+                                <strong>ET</strong> Artisan RGE.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="highlight"><strong>5.5 %</strong> (Super-réduit)</td>
+                            <td><span class="tooltip">La nouveauté écologique<span class="tooltiptext">A pour but
+                                        d'encourager la pose d'installations bas carbone avec domotique
+                                        énergétique.</span></span> : Logement > 2 ans <strong>ET</strong> Puissance (≤ 9
+                                kWc) <strong>ET</strong> Artisan RGE <strong>ET</strong> Présence d'un gestionnaire
+                                <span class="tooltip">EMS<span class="tooltiptext">Energy Management System : Pilote la
+                                        consommation (chauffage, VE) pour l'aligner sur la production
+                                        solaire.</span></span> (boîtier intelligent) <strong>ET</strong> Bilan Carbone
+                                des panneaux très strict (≤ 530 kgCO2).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 style="margin-top: 2.5rem;">Déclaration aux Impôts des revenus solaires 📄</h3>
+                <p>Même si nous gérons la revente du surplus, le client **a l'obligation légale de déclarer ces
+                    revenus** chaque année via le formulaire <strong>Cerfa 2042 C Pro</strong>. Mais attention, la
+                    taxation dépend d'un seuil clé :</p>
+
+                <div class="grid-2" style="margin-top: 1rem; margin-bottom: 2rem;">
+                    <div
+                        style="background: rgba(16, 185, 129, 0.05); border: 1px solid var(--success); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="margin-top:0; color: var(--success); font-size: 1.1rem;">⚡ Installation ≤ 3 kWc</h4>
+                        <p style="font-size: 0.95rem; margin-bottom: 0;">Les revenus issus de la vente de surplus sont
+                            <strong>totalement exonérés d'impôt sur le revenu et de prélèvements sociaux</strong> (à
+                            condition qu'il s'agisse d'un usage résidentiel avec 2 points de raccordement maximum). Les
+                            gains doivent juste figurer dans la case "revenus nets exonérés". C'est un pur bonus net
+                            pour le client !
+                        </p>
+                    </div>
+                    <div
+                        style="background: rgba(240, 80, 248, 0.05); border: 1px solid var(--primary); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="margin-top:0; color: var(--primary); font-size: 1.1rem;">📈 Installation > 3 kWc</h4>
+                        <p style="font-size: 0.95rem; margin-bottom: 0;">(Ex: 4 kWc, 6 kWc, 9 kWc). Les revenus sont
+                            imposables sous le régime du <strong>Micro-BIC</strong> (Bénéfices Industriels et
+                            Commerciaux). <br><br><strong>La bonne nouvelle :</strong> L'État applique un
+                            <strong>abattement forfaitaire massif de 71 %</strong>. Le client n'est donc imposé que sur
+                            les 29 % restants de ses bénéfices. De plus, les 305 premiers euros sont exonérés d'office.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2.5rem;">Et le Recyclage dans tout ça ? ♻️</h3>
+                <p>C'est une objection fréquente des clients : "les panneaux ne se recyclent pas". <strong>C'est
+                        totalement faux.</strong></p>
+                <div class="info-box" style="margin-top: 1rem; border-left-color: var(--success);">
+                    <p>En France, le recyclage est extrêmement bien structuré. À la fin de leur cycle de vie (plus de 30
+                        ans), les panneaux sont récupérés par l'éco-organisme agréé par l'État : <span
+                            class="tooltip">Soren<span class="tooltiptext">Soren collecte et recycle les panneaux
+                                solaires usagés en France métropolitaine et Outre-mer, financé par une éco-participation
+                                lors de l'achat.</span></span>.</p>
+                    <p style="margin-top: 0.5rem;">Actuellement, un panneau solaire (composé de verre, d'aluminium, de
+                        silicium et de cuivre) est <strong>recyclé à hauteur de 95 % !</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: INSTALLATION & ZONES -->
+        <section id="installation" class="content-section">
+            <div class="content-card">
+                <h2>Nos Zones d'Intervention & Le Workflow</h2>
+
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Où installons-nous ? (Carte des Départements)
+                </h3>
+                <p>À ce jour, nos équipes d'installateurs internes Octopus Energy Services France (OESF) opèrent
+                    exclusivement dans le quart Nord-Ouest et Ouest de la France. Le client doit impérativement résider
+                    dans
+                    l'une des zones suivantes :</p>
+
+                <div class="grid-2" style="margin-top: 1.5rem; margin-bottom: 2.5rem; gap: 1.5rem;">
+                    <div
+                        style="background: rgba(0, 229, 255, 0.1); border: 1px solid var(--secondary); padding: 1.5rem; border-radius: 12px; position: relative; overflow: hidden;">
+                        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;"></span>
+                        <h4 style="margin: 0; color: #fff; font-size: 1.2rem; margin-bottom: 0.5rem;">Zone Nord-Ouest
+                            (Cyan)
+                        </h4>
+                        <ul style="font-size: 0.95rem; color: #e2e8f0; padding-left: 1.2rem; line-height: 1.6;">
+                            <li><strong>Normandie :</strong> 14, 27, 50, 61, 76</li>
+                            <li><strong>Hauts-de-France :</strong> 02, 59, 60, 62, 80</li>
+                            <li><strong>Île-de-France :</strong> 77, 78, 91, 92, 93, 94, 95 <em>(Paris intramuros 75
+                                    exclu)</em></li>
+                        </ul>
+                        <div
+                            style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--secondary); border-radius: 50%; opacity: 0.15; filter: blur(25px);">
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: rgba(240, 80, 248, 0.1); border: 1px solid var(--primary); padding: 1.5rem; border-radius: 12px; position: relative; overflow: hidden;">
+                        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;"></span>
+                        <h4 style="margin: 0; color: #fff; font-size: 1.2rem; margin-bottom: 0.5rem;">Zone Centre-Ouest
+                            (Rose)
+                        </h4>
+                        <ul style="font-size: 0.95rem; color: #e2e8f0; padding-left: 1.2rem; line-height: 1.6;">
+                            <li><strong>Pays de la Loire :</strong> 49, 53, 72, 85</li>
+                            <li><strong>Centre-Val de Loire :</strong> 18, 28, 36, 37, 41, 45</li>
+                            <li><strong>Poitou / Charentes :</strong> 16, 17, 79, 86, 87</li>
+                        </ul>
+                        <div
+                            style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--primary); border-radius: 50%; opacity: 0.15; filter: blur(25px);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workflow-timeline"
+                    style="margin: 3rem 0; display: flex; flex-direction: column; gap: 2rem; position: relative;">
+                    <!-- Ligne verticale de connexion -->
+                    <div
+                        style="position: absolute; left: 24px; top: 30px; bottom: 30px; width: 2px; background: var(--border-light); z-index: 0;">
+                    </div>
+
+                    <!-- Etape 1 -->
+                    <div style="display: flex; gap: 1.5rem; position: relative; z-index: 1;">
+                        <div
+                            style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 0 15px var(--primary-glow);">
+                            📋</div>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); flex-grow: 1;">
+                            <h4 style="color: var(--primary); margin: 0 0 0.5rem 0; font-size: 1.2rem;">1. Qualification
+                                & Typeform</h4>
+                            <p style="margin:0; font-size: 0.95rem;">Vérification de l'éligibilité. Le client doit
+                                habiter notre zone logistique listée ci-dessus, avoir une toiture de >15m², connectée au
+                                réseau public (ENEDIS), couverte sans trace d'amiante. S'il n'est pas éligible, il est
+                                averti par mail automatiquement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Etape 2 -->
+                    <div style="display: flex; gap: 1.5rem; position: relative; z-index: 1;">
+                        <div
+                            style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);">
+                            📞</div>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); flex-grow: 1;">
+                            <h4 style="color: var(--secondary); margin: 0 0 0.5rem 0; font-size: 1.2rem;">2. Appel
+                                Commercial (Sous 48H)</h4>
+                            <p style="margin:0; font-size: 0.95rem;">Calibrage précis de la consommation (via données
+                                Linky), ajustement de la puissance (faut-il du 6kWc ou plutôt du 9kWc avec Batterie ?).
+                                Edition du Devis.</p>
+                        </div>
+                    </div>
+
+                    <!-- Etape 3 -->
+                    <div style="display: flex; gap: 1.5rem; position: relative; z-index: 1;">
+                        <div
+                            style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-dark); border: 2px solid #fbbf24; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);">
+                            🏛️</div>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); flex-grow: 1;">
+                            <h4 style="color: #fbbf24; margin: 0 0 0.5rem 0; font-size: 1.2rem;">3. Administratif (DP &
+                                Enedis)</h4>
+                            <p style="margin:0; font-size: 0.95rem;">Octopus constitue le dossier. L'Urbanisme de la
+                                mairie a généralement 1 mois pour valider le projet. Il faut également créer un dossier
+                                chez Enedis : <span class="tooltip">CAE ou CACSI<span class="tooltiptext">Ce sont 2
+                                        choses différentes ! Le CAE (Contrat d'Accès et d'Exploitation) est obligatoire
+                                        si on revend notre surplus (notre modèle standard avec EDF OA). La CACSI est une
+                                        convention stricte SANS injection de surplus sur le réseau.</span></span>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Etape 4 -->
+                    <div style="display: flex; gap: 1.5rem; position: relative; z-index: 1;">
+                        <div
+                            style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--success); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);">
+                            🏗️</div>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); flex-grow: 1;">
+                            <h4 style="color: var(--success); margin: 0 0 0.5rem 0; font-size: 1.2rem;">4.
+                                L'Installation & Consuel</h4>
+                            <p style="margin:0; font-size: 0.95rem;">Réalisée en 1 seule journée par NOS équipes. Un
+                                organisme consulaire (Consuel) validera ensuite l'intégrité électrique du réseau pour
+                                donner son feu vert à la revente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Organisation SAV Octopus</h3>
+                <p>Chez nous, nos équipes SAV se divisent en deux entités dédiées, avec pour point de contact central
+                    `solaire@octopusenergy.fr` :</p>
+                <ul>
+                    <li><strong>Niveau 1 "Distance" :</strong> 80% des tracas (mises à jour d'onduleurs, reboot, app qui
+                        freeze).</li>
+                    <li><strong>Niveau 2 "Intervention Physique" :</strong> Des vrais techniciens Octopus qui se rendent
+                        sur site pour changer des pièces (et non des sous-traitants désintéressés). C'est le pilier de
+                        notre marque de fabrique.</li>
+                </ul>
+
+                <p><strong>Rappel des Garanties de l'électronique Solaire :</strong> Même si l'Europe ne demande souvent
+                    que 2 ans de base, dans le circuit Solaire les garanties sont prodigieuses. Les onduleurs sont
+                    garantis 25 ans. Les batteries entre 10 et 15 ans selon les constructeurs. Une fois cette garantie
+                    échue, la batterie fonctionne toujours très bien, mais le constructeur ne gère plus les pannes
+                    gratuitement.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

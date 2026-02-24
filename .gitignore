@@ -1,0 +1,6 @@
+venv/
+extracted.txt
+extracted_fitz.txt
+solarboost.txt
+*.pdf
+.DS_Store
