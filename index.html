@@ -47,6 +47,10 @@
             <div class="nav-subtitle">Workflow & Rentabilité</div>
             <li><a href="#rentabilite" class="nav-item" data-target="rentabilite">Aides, TVA & Recyclage</a></li>
             <li><a href="#installation" class="nav-item" data-target="installation">Processus d'Installation</a></li>
+
+            <div class="nav-subtitle">Validation des Acquis</div>
+            <li><a href="#quizz" class="nav-item" style="color: var(--primary);" data-target="quizz">🎯 Quizz
+                    d'entraînement</a></li>
         </ul>
     </aside>
 
@@ -68,7 +72,7 @@
             </div>
 
             <div class="content-card">
-                <h2>Introduction à la nouvelle activité Solaire</h2>
+                <h2>Introduction au Solaire</h2>
                 <p>Depuis février 2024, Octopus Energy France a lancé une nouvelle activité majeure : la
                     <strong>commercialisation et l'installation de panneaux photovoltaïques</strong>.
                 </p>
@@ -741,6 +745,66 @@
                     garantis 25 ans. Les batteries entre 10 et 15 ans selon les constructeurs. Une fois cette garantie
                     échue, la batterie fonctionne toujours très bien, mais le constructeur ne gère plus les pannes
                     gratuitement.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 9: QUIZZ -->
+        <section id="quizz" class="content-section">
+            <div class="hero-banner"
+                style="min-height: 200px; padding: 2rem; align-items: center; background: linear-gradient(135deg, rgba(2, 6, 23, 0.9), rgba(148, 76, 255, 0.2)); box-shadow: 0 0 30px rgba(148, 76, 255, 0.1);">
+                <div class="hero-content">
+                    <span class="tag" style="background: var(--success);">Testez vos connaissances</span>
+                    <h1 style="font-size: 2.5rem; margin-top: 1rem;">Le Grand Quizz DigiOps</h1>
+                    <p style="font-size: 1.1rem; color: #e2e8f0; max-width: 600px;">50 questions pour valider vos acquis
+                        sur les fondamentaux, la fiscalité, les offres et le matériel Solaire Octopus !</p>
+                </div>
+            </div>
+
+            <div class="content-card" style="border-top: 4px solid var(--primary);">
+                <div id="quiz-container">
+                    <!-- Score and Progress -->
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-light); padding-bottom: 1rem;">
+                        <div id="quiz-progress" style="color: var(--text-muted); font-weight: 600;">Question <span
+                                id="current-question-num" style="color: var(--primary);">1</span> sur 50</div>
+                        <div id="quiz-score-display"
+                            style="display: none; background: rgba(16, 185, 129, 0.1); color: var(--success); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 800;">
+                            Score: <span id="current-score">0</span></div>
+                    </div>
+
+                    <!-- Question Area -->
+                    <div id="quiz-content">
+                        <h3 id="question-text" style="color: #fff; margin-top: 0; font-size: 1.4rem;">Chargement de la
+                            question...</h3>
+
+                        <div id="options-container"
+                            style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+                            <!-- Options will be injected here via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Results Area (Hidden by default) -->
+                    <div id="quiz-results" style="display: none; text-align: center; padding: 2rem 0;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🎓</div>
+                        <h2 style="color: #fff;">Quizz Terminé !</h2>
+                        <p style="font-size: 1.2rem; margin-bottom: 0;">Votre score final est de :</p>
+                        <div id="final-score"
+                            style="font-size: 3rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">40/50
+                        </div>
+                        <p id="final-message" style="color: var(--text-muted); margin-bottom: 2rem;">Bravo ! Vous êtes
+                            prêt(e) à renseigner nos futurs clients !</p>
+                        <button id="restart-quiz-btn"
+                            style="background: var(--primary); color: #fff; border: none; padding: 1rem 2rem; font-size: 1.1rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Recommencer
+                            le Quizz</button>
+                    </div>
+
+                    <!-- Next Button -->
+                    <div id="next-btn-container" style="display: none; margin-top: 2rem; text-align: right;">
+                        <button id="next-question-btn"
+                            style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid var(--border-light); padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Question
+                            Suivante ➔</button>
+                    </div>
+                </div>
             </div>
         </section>
 
