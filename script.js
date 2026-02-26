@@ -558,24 +558,24 @@ document.addEventListener('DOMContentLoaded', () => {
             explication: "Au-dessus de 3 kWc, l'installation est soumise à la TVA normale de 20% (sauf cas spécifiques rares)."
         },
         {
-            question: "À combien s'élève environ la prime à l'autoconsommation de l'État en 2024 pour un 3 kWc ?",
+            question: "À combien s'élève la prime à l'autoconsommation de l'État au 1er trimestre 2026 pour une installation jusqu'à 9 kWc ?",
             options: [
-                "Une prime unique de 1500 €",
-                "Environ 200 à 300€/kWc (selon trimestre), soit ~600-900€ au total",
+                "140 € / kWc",
+                "80 € / kWc",
                 "80 € pour toute l'installation"
             ],
             correct: 1,
-            explication: "La prime varie par arrêté. Historiquement de 300 à 500€/kWc, elle a baissé autour de 200-300€/kWc pour le résidentiel."
+            explication: "Selon le barème CRE du 1er trimestre 2026, la prime est de 80 €/kWc pour les installations ≤ 9 kWc."
         },
         {
             question: "Comment est versée la prime à l'autoconsommation aujourd'hui ?",
             options: [
-                "Sur 5 ans à chaque anniversaire de connexion",
-                "Elle est versée en une seule fois lors de la première facturation Enedis",
+                "Sur 5 ans à chaque anniversaire de connexion (pour toutes les puissances)",
+                "En une fois si puissance ≤ 9 kWc, sinon 80% la 1ère année puis 5%/an sur 4 ans",
                 "Déduite du devis de l'artisan immédiatement"
             ],
             correct: 1,
-            explication: "Depuis 2023, elle est versée intégralement en une traite à la date anniversaire de mise en service lors de la première facturation de surplus."
+            explication: "Le versement se fait en 1 fois pour les installations ≤ 9 kWc, et en plusieurs fois (80% puis 4x5%) pour les plus grandes."
         },
         {
             question: "Si un client vend la TOTALITÉ de sa production (Vente Totale), touche-t-il la prime à l'autoconsommation ?",
