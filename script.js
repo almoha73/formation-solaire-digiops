@@ -651,7 +651,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreDisplay = document.getElementById('quiz-score-display');
     const currentScore = document.getElementById('current-score');
     const navBtnContainer = document.getElementById('nav-btn-container');
-    const prevBtn = document.getElementById('prev-question-btn');
     const nextBtn = document.getElementById('next-question-btn');
     const quizContent = document.getElementById('quiz-content');
     const quizResults = document.getElementById('quiz-results');
@@ -667,7 +666,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Only init if quiz exists on page
     if (questionText && optionsContainer) {
         navQuizItem.addEventListener('click', () => initQuiz(false));
-        prevBtn.addEventListener('click', loadPrevQuestion);
         nextBtn.addEventListener('click', loadNextQuestion);
         restartBtn.addEventListener('click', () => initQuiz(true));
 
@@ -777,12 +775,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navBtnContainer) navBtnContainer.style.display = 'flex';
         updateJumpGrid();
 
-        if (currentQuestion > 0) {
-            prevBtn.style.display = 'block';
-        } else {
-            prevBtn.style.display = 'none';
-        }
-
         const hasAnswered = userAnswers[currentQuestion] !== null;
 
         if (hasAnswered) {
@@ -876,13 +868,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateJumpGrid();
-    }
-
-    function loadPrevQuestion() {
-        if (currentQuestion > 0) {
-            currentQuestion--;
-            loadQuestionData();
-        }
     }
 
     function loadNextQuestion() {
