@@ -548,14 +548,14 @@ document.addEventListener('DOMContentLoaded', () => {
             explication: "L'installation ≤ 3 kWc bénéficie de la TVA réduite (10%) et d'une exonération d'impôt sur la revente du surplus."
         },
         {
-            question: "Quelle est la TVA appliquée à une installation de 6 kWc ?",
+            question: "En 2026, quel taux de TVA s’applique à la fourniture et à la pose de panneaux photovoltaïques d’une puissance de 6 kWc, installés sur la résidence principale d’un particulier, mise en service en autoconsommation avec vente du surplus, sur un logement achevé depuis plus de 2 ans et réalisée par un installateur RGE ?",
             options: [
-                "5.5 %",
+                "5,5 %",
                 "10 %",
                 "20 %"
             ],
-            correct: 2,
-            explication: "Au-dessus de 3 kWc, l'installation est soumise à la TVA normale de 20% (sauf cas spécifiques rares)."
+            correct: 0,
+            explication: "L'installation remplit tous les critères (logement > 2 ans, puissance ≤ 9 kWc, installateur RGE, et domotique énergétique associée/EMS) pour bénéficier du taux super-réduit à 5,5 %."
         },
         {
             question: "À combien s'élève la prime à l'autoconsommation de l'État au 1er trimestre 2026 pour une installation jusqu'à 9 kWc ?",
@@ -642,6 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestion = 0;
     let score = 0;
     let quizActive = true;
+    let userAnswers = [];
 
     const navQuizItem = document.querySelector('a[data-target="quizz"]');
     const questionText = document.getElementById('question-text');
@@ -649,34 +650,165 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentQNumDisplay = document.getElementById('current-question-num');
     const scoreDisplay = document.getElementById('quiz-score-display');
     const currentScore = document.getElementById('current-score');
-    const nextBtnContainer = document.getElementById('next-btn-container');
+    const navBtnContainer = document.getElementById('nav-btn-container');
+    const prevBtn = document.getElementById('prev-question-btn');
     const nextBtn = document.getElementById('next-question-btn');
     const quizContent = document.getElementById('quiz-content');
     const quizResults = document.getElementById('quiz-results');
+    const jumpNavContainer = document.getElementById('quiz-jump-nav');
+    const gridContainer = document.getElementById('quiz-grid-container');
     const finalScore = document.getElementById('final-score');
     const finalMessage = document.getElementById('final-message');
     const restartBtn = document.getElementById('restart-quiz-btn');
+    const resetCurrentBtn = document.getElementById('reset-current-quiz-btn');
+    const allAnsweredBanner = document.getElementById('all-answered-banner');
+    const viewResultsLink = document.getElementById('view-results-link');
 
     // Only init if quiz exists on page
     if (questionText && optionsContainer) {
-        navQuizItem.addEventListener('click', startQuiz);
+        navQuizItem.addEventListener('click', () => initQuiz(false));
+        prevBtn.addEventListener('click', loadPrevQuestion);
         nextBtn.addEventListener('click', loadNextQuestion);
-        restartBtn.addEventListener('click', startQuiz);
+        restartBtn.addEventListener('click', () => initQuiz(true));
+
+        if (resetCurrentBtn) resetCurrentBtn.addEventListener('click', () => {
+            if (confirm("Voulez-vous vraiment réinitialiser toutes vos réponses ?")) {
+                initQuiz(true);
+            }
+        });
+
+        if (viewResultsLink) {
+            viewResultsLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showResults();
+            });
+        }
+
+        if (window.location.hash === '#quizz') {
+            initQuiz(false);
+        }
     }
 
-    function startQuiz() {
-        currentQuestion = 0;
+    function initQuiz(reset = false) {
+        if (reset) {
+            localStorage.removeItem('digiops_quiz_answers');
+            currentQuestion = 0;
+        }
+
+        const savedAnswers = localStorage.getItem('digiops_quiz_answers');
+        if (savedAnswers) {
+            userAnswers = JSON.parse(savedAnswers);
+            if (!reset) {
+                const firstUnanswered = userAnswers.indexOf(null);
+                currentQuestion = firstUnanswered !== -1 ? firstUnanswered : 0;
+            }
+        } else {
+            userAnswers = new Array(quizData.length).fill(null);
+            currentQuestion = 0;
+        }
+
         score = 0;
-        quizActive = true;
+        userAnswers.forEach((ans, i) => {
+            if (ans !== null && ans === quizData[i].correct) {
+                score++;
+            }
+        });
+
+        quizActive = userAnswers[currentQuestion] === null;
+
         quizContent.style.display = 'block';
         quizResults.style.display = 'none';
         scoreDisplay.style.display = 'block';
         currentScore.textContent = score;
+
+        if (allAnsweredBanner) allAnsweredBanner.style.display = 'none';
+        if (resetCurrentBtn && resetCurrentBtn.parentElement) {
+            resetCurrentBtn.parentElement.style.display = 'flex';
+        }
+
+        if (jumpNavContainer) jumpNavContainer.style.display = 'block';
+        generateJumpGrid();
+
         loadQuestionData();
     }
 
+    function generateJumpGrid() {
+        if (!gridContainer) return;
+        gridContainer.innerHTML = '';
+
+        for (let i = 0; i < quizData.length; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'jump-btn';
+            btn.textContent = i + 1;
+
+            btn.addEventListener('click', () => {
+                if (currentQuestion !== i) {
+                    currentQuestion = i;
+                    loadQuestionData();
+                }
+            });
+
+            gridContainer.appendChild(btn);
+        }
+    }
+
+    function updateJumpGrid() {
+        if (!gridContainer) return;
+
+        const buttons = gridContainer.querySelectorAll('.jump-btn');
+        buttons.forEach((btn, i) => {
+            // Reset to base class
+            btn.className = 'jump-btn';
+
+            if (i === currentQuestion) {
+                btn.classList.add('current');
+            } else if (userAnswers[i] !== null && userAnswers[i] !== undefined) {
+                const isCorrect = userAnswers[i] === quizData[i].correct;
+                if (isCorrect) {
+                    btn.classList.add('answered-correct');
+                } else {
+                    btn.classList.add('answered-wrong');
+                }
+            }
+        });
+    }
+
     function loadQuestionData() {
-        nextBtnContainer.style.display = 'none';
+        if (navBtnContainer) navBtnContainer.style.display = 'flex';
+        updateJumpGrid();
+
+        if (currentQuestion > 0) {
+            prevBtn.style.display = 'block';
+        } else {
+            prevBtn.style.display = 'none';
+        }
+
+        const hasAnswered = userAnswers[currentQuestion] !== null;
+
+        if (hasAnswered) {
+            nextBtn.style.display = 'block';
+            quizActive = false;
+        } else {
+            nextBtn.style.display = 'none';
+            quizActive = true;
+        }
+
+        const isFullyAnswered = userAnswers.every(ans => ans !== null);
+        if (isFullyAnswered && allAnsweredBanner) {
+            allAnsweredBanner.style.display = 'block';
+        } else if (allAnsweredBanner) {
+            allAnsweredBanner.style.display = 'none';
+        }
+
+        // Change text on the last question
+        if (currentQuestion === quizData.length - 1) {
+            nextBtn.textContent = "Voir mes résultats ➔";
+            nextBtn.style.background = "var(--primary)";
+        } else {
+            nextBtn.textContent = "Question Suivante ➔";
+            nextBtn.style.background = "rgba(255,255,255,0.1)";
+        }
+
         currentQNumDisplay.textContent = currentQuestion + 1;
 
         const qData = quizData[currentQuestion];
@@ -697,12 +829,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             btn.addEventListener('click', () => checkAnswer(index, btn));
             optionsContainer.appendChild(btn);
+
+            if (hasAnswered) {
+                btn.disabled = true;
+                if (index === qData.correct) {
+                    btn.classList.add('correct');
+                } else if (index === userAnswers[currentQuestion] && index !== qData.correct) {
+                    btn.classList.add('wrong');
+                }
+            }
         });
     }
 
     function checkAnswer(selectedIndex, btnElement) {
         if (!quizActive) return;
         quizActive = false;
+
+        userAnswers[currentQuestion] = selectedIndex;
+        localStorage.setItem('digiops_quiz_answers', JSON.stringify(userAnswers));
 
         const qData = quizData[currentQuestion];
         const isCorrect = (selectedIndex === qData.correct);
@@ -724,15 +868,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Show Next button
-        nextBtnContainer.style.display = 'block';
+        nextBtn.style.display = 'block';
 
-        // Change text on the last question
-        if (currentQuestion === quizData.length - 1) {
-            nextBtn.textContent = "Voir mes résultats ➔";
-            nextBtn.style.background = "var(--primary)";
-        } else {
-            nextBtn.textContent = "Question Suivante ➔";
-            nextBtn.style.background = "rgba(255,255,255,0.1)";
+        const isFullyAnswered = userAnswers.every(ans => ans !== null);
+        if (isFullyAnswered && allAnsweredBanner) {
+            allAnsweredBanner.style.display = 'block';
+        }
+
+        updateJumpGrid();
+    }
+
+    function loadPrevQuestion() {
+        if (currentQuestion > 0) {
+            currentQuestion--;
+            loadQuestionData();
         }
     }
 
@@ -749,23 +898,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showResults() {
         quizContent.style.display = 'none';
-        nextBtnContainer.style.display = 'none';
+        if (navBtnContainer) navBtnContainer.style.display = 'none';
+        if (jumpNavContainer) jumpNavContainer.style.display = 'none';
+        if (allAnsweredBanner) allAnsweredBanner.style.display = 'none';
         scoreDisplay.style.display = 'none';
+
+        if (resetCurrentBtn && resetCurrentBtn.parentElement) {
+            resetCurrentBtn.parentElement.style.display = 'none'; // hide the reset button area
+        }
+
         quizResults.style.display = 'block';
 
         finalScore.textContent = `${score} / ${quizData.length}`;
 
         if (score === 50) {
-            finalMessage.textContent = "Un Sans-Faute ! Vous êtes le roi ou la reine de la ligne de vente ! 🐙👑";
+            finalMessage.textContent = "Un Sans-Faute ! Tu es le roi ou la reine du solaire ! 🐙👑";
             finalScore.style.color = "var(--success)";
         } else if (score >= 40) {
-            finalMessage.textContent = "Excellent score ! Vous maîtrisez presque parfaitement les offres Octopus ! 👍";
+            finalMessage.textContent = "Excellent score ! Tu maitrises presque parfaitement le solaire ! 👍";
             finalScore.style.color = "var(--primary)";
         } else if (score >= 25) {
-            finalMessage.textContent = "Bon début. Prenez le temps de relire les sections fiscales et techniques ! 📚";
+            finalMessage.textContent = "Bon début. Prends le temps de relire les sections fiscales et techniques ! 📚";
             finalScore.style.color = "#fbbf24";
         } else {
-            finalMessage.textContent = "Aïe. Un rappel des connaissances s'impose avant les appels clients ! 🚨";
+            finalMessage.textContent = "Aïe. Un rappel des connaissances s'impose avant tes appels clients ! 🚨";
             finalScore.style.color = "#ef4444";
         }
     }

@@ -821,9 +821,23 @@
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-light); padding-bottom: 1rem;">
                         <div id="quiz-progress" style="color: var(--text-muted); font-weight: 600;">Question <span
                                 id="current-question-num" style="color: var(--primary);">1</span> sur 50</div>
-                        <div id="quiz-score-display"
-                            style="display: none; background: rgba(16, 185, 129, 0.1); color: var(--success); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 800;">
-                            Score: <span id="current-score">0</span></div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <button id="reset-current-quiz-btn"
+                                style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.5); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: bold; cursor: pointer; transition: all 0.2s;">↻
+                                Réinitialiser</button>
+                            <div id="quiz-score-display"
+                                style="display: none; background: rgba(16, 185, 129, 0.1); color: var(--success); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 800;">
+                                Score: <span id="current-score">0</span></div>
+                        </div>
+                    </div>
+
+                    <!-- All Answered Banner -->
+                    <div id="all-answered-banner"
+                        style="display: none; background: rgba(16, 185, 129, 0.15); border: 1px solid var(--success); color: #fff; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center; animation: fadeIn 0.4s ease forwards;">
+                        🎉 <strong>Vous avez répondu à l'intégralité des 50 questions !</strong> Vous pouvez consulter
+                        vos <a href="#" id="view-results-link"
+                            style="color: var(--success); text-decoration: underline; font-weight: bold;">résultats
+                            finaux</a>.
                     </div>
 
                     <!-- Question Area -->
@@ -852,11 +866,25 @@
                             le Quizz</button>
                     </div>
 
-                    <!-- Next Button -->
-                    <div id="next-btn-container" style="display: none; margin-top: 2rem; text-align: right;">
+                    <!-- Navigation Buttons -->
+                    <div id="nav-btn-container"
+                        style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                        <button id="prev-question-btn"
+                            style="display: none; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid var(--border-light); padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">⬅
+                            Précédent</button>
                         <button id="next-question-btn"
-                            style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid var(--border-light); padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Question
+                            style="display: none; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid var(--border-light); padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-left: auto;">Question
                             Suivante ➔</button>
+                    </div>
+
+                    <!-- Jump Navigation Grid -->
+                    <div id="quiz-jump-nav"
+                        style="display: none; margin-top: 2rem; border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
+                        <h4
+                            style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0; margin-bottom: 1rem; text-align: center;">
+                            Aller directement à la question...</h4>
+                        <div id="quiz-grid-container"
+                            style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;"></div>
                     </div>
                 </div>
             </div>
