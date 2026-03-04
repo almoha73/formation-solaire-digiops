@@ -910,4 +910,12 @@ document.addEventListener('DOMContentLoaded', () => {
             finalScore.style.color = "#ef4444";
         }
     }
+
+    // Gestion des flushcards scénarios
+    const scenarioCards = document.querySelectorAll('.scenario-card');
+    scenarioCards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
+    });
 });
