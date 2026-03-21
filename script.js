@@ -689,11 +689,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initQuiz(reset = false) {
         if (reset) {
-            localStorage.removeItem('digiops_quiz_answers');
+            localStorage.removeItem('ops_b2c_quiz_answers');
             currentQuestion = 0;
         }
 
-        const savedAnswers = localStorage.getItem('digiops_quiz_answers');
+        const savedAnswers = localStorage.getItem('ops_b2c_quiz_answers');
         if (savedAnswers) {
             userAnswers = JSON.parse(savedAnswers);
             if (!reset) {
@@ -838,7 +838,7 @@ document.addEventListener('DOMContentLoaded', () => {
         quizActive = false;
 
         userAnswers[currentQuestion] = selectedIndex;
-        localStorage.setItem('digiops_quiz_answers', JSON.stringify(userAnswers));
+        localStorage.setItem('ops_b2c_quiz_answers', JSON.stringify(userAnswers));
 
         const qData = quizData[currentQuestion];
         const isCorrect = (selectedIndex === qData.correct);
