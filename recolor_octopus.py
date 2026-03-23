@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img_path = '/Users/agnes.beaumatin1/Desktop/Projets/solaire/assets/constantine_solar.png'
+img_path = 'assets/constantine_solar.png'
 img = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
 
 if img is None:
