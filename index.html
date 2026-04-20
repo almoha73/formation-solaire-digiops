@@ -451,10 +451,11 @@
                         <ul style="font-size: 0.95rem;">
                             <li><strong>Tarif d'électricité :</strong> Fixe sur 3 ans au prix du TRV.</li>
                             <li><strong>Rachat du surplus :</strong> Aligné au marché à 0,04€/kWh (bloqué 3 ans, par
-                                virement annuel).</li>
+                                virement annuel). <em>Les données d'injection sont comptabilisées par le Linky, et en fin d'année Octopus récupère les données d'Enedis pour calculer ce rachat.</em></li>
                             <li><strong>Bonus de Pilotage Quotidien :</strong> Octopus reverse une "cagnotte" chaque
                                 jour où la batterie est prête à aider le réseau. <em>(Exemple : 1€ / jour de gagné pour
                                     une batterie 10kWh, soit un gain net garanti de 1095€ sur 3 ans !)</em>.</li>
+                            <li><strong>Pilotage Intelligent :</strong> La recharge prend en compte les besoins de conso du foyer et les prévisions de production solaire. L'algorithme priorise l'autoconso et la recharge depuis les PV à tout moment, évite de revendre l'énergie quand les prix sont négatifs, et favorise la revente dans les moments où les prix sont plus élevés.</li>
                         </ul>
                     </div>
                 </div>
@@ -514,6 +515,44 @@
                     <p>En installant ses panneaux avec Octopus, nous couvrons <strong>intégralement la consommation
                             d'électricité du client la première année</strong>.<br>C'est un argument fort pour le
                         rassurer et concrétiser la vente.</p>
+
+                    <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Un bonus pour couvrir les premières mensualités</h5>
+                    <div style="overflow-x: auto;">
+                        <table class="modern-table" style="width: 100%; text-align: center;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left;">Taille de la batterie (kWh)</th>
+                                    <th>5</th>
+                                    <th>7</th>
+                                    <th>10</th>
+                                    <th>14</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left;"><strong>Offre un an d'électricité offerte</strong></td>
+                                    <td>200 €</td>
+                                    <td>250 €</td>
+                                    <td>350 €</td>
+                                    <td>350 €</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;"><strong>Bonus pilotage</strong></td>
+                                    <td>182 €</td>
+                                    <td>255 €</td>
+                                    <td>365 €</td>
+                                    <td>511 €</td>
+                                </tr>
+                                <tr>
+                                    <td class="highlight" style="text-align: left;"><strong>Gain total la première année</strong><br><em style="font-size: 0.8em; font-weight: normal;">(inclut le bonus pilotage)</em></td>
+                                    <td class="highlight" style="color: var(--primary);"><strong>382 €</strong></td>
+                                    <td class="highlight" style="color: var(--primary);"><strong>505 €</strong></td>
+                                    <td class="highlight" style="color: var(--primary);"><strong>715 €</strong></td>
+                                    <td class="highlight" style="color: var(--primary);"><strong>861 €</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 3.5rem; margin-bottom: 2rem;">
