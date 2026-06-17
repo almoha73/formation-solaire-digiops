@@ -607,7 +607,7 @@
                 </p>
                 <ul>
                     <li>L'installation des panneaux et de la batterie doit obligatoirement avoir été <strong>réalisée
-                            par Octopus Energy Services (OESF)</strong>.</li>
+                            par Octopus Energy Services (OESF) ou l'un de nos partenaires installateurs agréés</strong>.</li>
                     <li>Le client doit être en <strong>fourniture d'électricité chez Octopus Energy</strong>.</li>
                     <li>Il doit posséder une <strong>batterie compatible</strong> (marques Huawei ou Enphase à ce jour).
                     </li>
@@ -927,12 +927,10 @@
                             <div class="scenario-card-back">
                                 <h3>Le réflexe indispensable</h3>
                                 <p>« Ah, votre maison a l'air parfaite... mais je vais devoir vous freiner un peu !
-                                    Actuellement, on couvre tout le quart Nord-Ouest et Centre-Ouest de la France, mais
-                                    pas encore le Sud.</p>
-                                <p>Pour garantir notre qualité, on ne fait aucune sous-traitance. Ce sont nos propres
-                                    installateurs OESF qui interviennent, et on ouvre les zones progressivement. Je
-                                    préfère être honnête avec vous. Mais je note vos coordonnées pour vous rappeler dès
-                                    qu'on arrive chez vous ! »</p>
+                                    Actuellement, nous installons en direct (OESF) dans le Nord-Ouest et le Centre-Ouest de la France, 
+                                    et via nos partenaires certifiés dans d'autres régions (Grand Est, Bretagne, Hérault/Gard/Aude, Pau).</p>
+                                <p>Malheureusement, Marseille et le département des Bouches-du-Rhône ne sont pas encore couverts, que ce soit en direct ou par un partenaire. 
+                                    Je note vos coordonnées pour vous recontacter dès que nous ouvrirons votre secteur ! »</p>
                                 <div class="flip-hint">Retourner la carte ➔</div>
                             </div>
                         </div>
@@ -971,44 +969,92 @@
             <div class="content-card">
                 <h2>Nos Zones d'Intervention & Le Workflow</h2>
 
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Où installons-nous ? (Carte des Départements)
-                </h3>
-                <p>À ce jour, nos équipes d'installateurs internes Octopus Energy Services France (OESF) opèrent
-                    exclusivement dans le quart Nord-Ouest et Ouest de la France. Le client doit impérativement résider
-                    dans
-                    l'une des zones suivantes :</p>
+                <h3 style="color: var(--secondary); margin-bottom: 1rem;">Où installons-nous ?</h3>
+                <p>Nous combinons nos propres équipes d'installation internes <strong>Octopus Energy Services France (OESF)</strong> et des <strong>partenaires installateurs locaux certifiés</strong> pour couvrir une large partie du territoire.</p>
 
-                <div class="grid-2" style="margin-top: 1.5rem; margin-bottom: 2.5rem; gap: 1.5rem;">
-                    <div
-                        style="background: rgba(0, 229, 255, 0.1); border: 1px solid var(--secondary); padding: 1.5rem; border-radius: 12px; position: relative; overflow: hidden;">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;"></span>
-                        <h4 style="margin: 0; color: #fff; font-size: 1.2rem; margin-bottom: 0.5rem;">Zone Nord-Ouest
-                            (Cyan)
-                        </h4>
-                        <ul style="font-size: 0.95rem; color: #e2e8f0; padding-left: 1.2rem; line-height: 1.6;">
-                            <li><strong>Normandie :</strong> 14, 27, 50, 61, 76</li>
-                            <li><strong>Hauts-de-France :</strong> 02, 59, 60, 62, 80</li>
-                            <li><strong>Île-de-France :</strong> 77, 78, 91, 92, 93, 94, 95 <em>(Paris intramuros 75
-                                    exclu)</em></li>
-                        </ul>
-                        <div
-                            style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--secondary); border-radius: 50%; opacity: 0.15; filter: blur(25px);">
+                <div class="zones-interactive-layout">
+                    <!-- Carte interactive à gauche -->
+                    <div class="zones-map-container">
+                        <img src="assets/carte_zones.jpg" alt="Carte des Zones d'Intervention Octopus Energy (Services & Partenaires)" class="zones-map-img">
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; font-style: italic; display: flex; align-items: center; gap: 0.4rem; justify-content: center;">
+                            🔍 <span>Cliquez sur la carte pour l'agrandir</span>
                         </div>
                     </div>
 
-                    <div
-                        style="background: rgba(240, 80, 248, 0.1); border: 1px solid var(--primary); padding: 1.5rem; border-radius: 12px; position: relative; overflow: hidden;">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;"></span>
-                        <h4 style="margin: 0; color: #fff; font-size: 1.2rem; margin-bottom: 0.5rem;">Zone Centre-Ouest
-                            (Rose)
-                        </h4>
-                        <ul style="font-size: 0.95rem; color: #e2e8f0; padding-left: 1.2rem; line-height: 1.6;">
-                            <li><strong>Pays de la Loire :</strong> 49, 53, 72, 85</li>
-                            <li><strong>Centre-Val de Loire :</strong> 18, 28, 36, 37, 41, 45</li>
-                            <li><strong>Poitou / Charentes :</strong> 16, 17, 79, 86, 87</li>
-                        </ul>
-                        <div
-                            style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--primary); border-radius: 50%; opacity: 0.15; filter: blur(25px);">
+                    <!-- Liste des zones à droite -->
+                    <div class="zones-list-container">
+                        <!-- Zone Interne OESF -->
+                        <div class="zone-group-card" style="background: rgba(240, 80, 248, 0.05); border: 1px solid var(--primary); padding: 1.2rem; border-radius: 12px; position: relative; overflow: hidden; box-shadow: 0 4px 15px rgba(240, 80, 248, 0.05);">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="width: 12px; height: 12px; background-color: var(--primary); border-radius: 50%; display: inline-block;"></span>
+                                <h4 style="margin: 0; color: #fff; font-size: 1.15rem;">Nos équipes internes Octopus (OESF)</h4>
+                            </div>
+                            <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #cbd5e1;">Installation en direct par nos techniciens salariés.</p>
+                            <div style="font-size: 0.85rem; color: #94a3b8; background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); line-height: 1.5;">
+                                <strong>Zones couvertes :</strong><br>
+                                • <strong>Normandie :</strong> 14, 27, 50, 61, 76<br>
+                                • <strong>Hauts-de-France :</strong> 02, 59, 60, 62, 80<br>
+                                • <strong>Île-de-France :</strong> 77, 78, 91, 92, 93, 94, 95 <em>(Paris 75 exclu)</em><br>
+                                • <strong>Pays de la Loire & Centre :</strong> 18, 28, 36, 37, 41, 44, 45, 49, 53, 72, 85<br>
+                                • <strong>Poitou & Charentes :</strong> 79, 86, 87
+                            </div>
+                        </div>
+
+                        <!-- Zones Partenaires -->
+                        <div class="zone-group-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light); padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <h4 style="margin: 0 0 0.8rem 0; color: #fff; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;">🤝 Nos installateurs partenaires agréés</h4>
+                            <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #cbd5e1;">Installateurs locaux qualifiés et audités par Octopus.</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <!-- Circuit court énergie -->
+                                <div style="background: rgba(37, 99, 235, 0.05); border: 1px solid #2563eb; padding: 0.8rem; border-radius: 8px;">
+                                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem;">
+                                        <span style="width: 8px; height: 8px; background-color: #2563eb; border-radius: 50%; display: inline-block;"></span>
+                                        <strong style="color: #fff; font-size: 0.9rem;">Circuit Court Énergie</strong>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #cbd5e1; display: block; margin-bottom: 0.2rem;">Bretagne</span>
+                                    <span style="font-size: 0.75rem; color: #94a3b8; font-family: monospace;">Dép. : 22, 29, 35, 56</span>
+                                </div>
+
+                                <!-- Placement Solaire -->
+                                <div style="background: rgba(139, 92, 246, 0.05); border: 1px solid #8b5cf6; padding: 0.8rem; border-radius: 8px;">
+                                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem;">
+                                        <span style="width: 8px; height: 8px; background-color: #8b5cf6; border-radius: 50%; display: inline-block;"></span>
+                                        <strong style="color: #fff; font-size: 0.9rem;">Placement Solaire</strong>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #cbd5e1; display: block; margin-bottom: 0.2rem;">Grand Est</span>
+                                    <span style="font-size: 0.75rem; color: #94a3b8; font-family: monospace;">Dép. : 08, 10, 51, 52, 54, 55, 57, 88</span>
+                                </div>
+
+                                <!-- Libow -->
+                                <div style="background: rgba(0, 229, 255, 0.05); border: 1px solid var(--secondary); padding: 0.8rem; border-radius: 8px;">
+                                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem;">
+                                        <span style="width: 8px; height: 8px; background-color: var(--secondary); border-radius: 50%; display: inline-block;"></span>
+                                        <strong style="color: #fff; font-size: 0.9rem;">Libow</strong>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #cbd5e1; display: block; margin-bottom: 0.2rem;">Hérault, Gard, Aude</span>
+                                    <span style="font-size: 0.75rem; color: #94a3b8; font-family: monospace;">Dép. : 11, 30, 34</span>
+                                </div>
+
+                                <!-- Aquasun -->
+                                <div style="background: rgba(162, 28, 175, 0.05); border: 1px solid #a21caf; padding: 0.8rem; border-radius: 8px;">
+                                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem;">
+                                        <span style="width: 8px; height: 8px; background-color: #a21caf; border-radius: 50%; display: inline-block;"></span>
+                                        <strong style="color: #fff; font-size: 0.9rem;">Aquasun</strong>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: #cbd5e1; display: block; margin-bottom: 0.2rem;">Pau & Aquitaine</span>
+                                    <span style="font-size: 0.75rem; color: #94a3b8; font-family: monospace;">Dép. : 64</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hors Couverture -->
+                        <div class="zone-group-card" style="background: rgba(255, 255, 255, 0.01); border: 1px dashed rgba(255, 255, 255, 0.1); padding: 0.8rem 1.2rem; border-radius: 12px; display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="width: 10px; height: 10px; background-color: #64748b; border-radius: 50%; display: inline-block;"></span>
+                                <span style="font-size: 0.9rem; color: #94a3b8;"><strong>Hors couverture :</strong> Reste du territoire</span>
+                            </div>
+                            <span style="font-size: 0.8rem; color: #64748b; font-style: italic;">Ouverture progressive</span>
                         </div>
                     </div>
                 </div>
@@ -1198,6 +1244,13 @@
         </section>
 
     </main>
+
+    <!-- Modal de zoom pour la carte -->
+    <div id="map-modal" class="map-modal">
+        <span class="map-modal-close">&times;</span>
+        <img class="map-modal-content" id="img-modal-target">
+        <div id="map-modal-caption"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>

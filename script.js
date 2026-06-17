@@ -918,4 +918,31 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.toggle('flipped');
         });
     });
+
+    // Gestion de la modale de zoom pour la carte des zones
+    const mapImg = document.querySelector('.zones-map-img');
+    const mapModal = document.getElementById('map-modal');
+    const modalImg = document.getElementById('img-modal-target');
+    const captionText = document.getElementById('map-modal-caption');
+    const closeBtn = document.querySelector('.map-modal-close');
+
+    if (mapImg && mapModal && modalImg) {
+        mapImg.addEventListener('click', function() {
+            mapModal.style.display = 'block';
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                mapModal.style.display = 'none';
+            });
+        }
+
+        mapModal.addEventListener('click', function(e) {
+            if (e.target === mapModal || e.target === closeBtn) {
+                mapModal.style.display = 'none';
+            }
+        });
+    }
 });
