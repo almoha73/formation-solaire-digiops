@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "0,20 € / kWh "
             ],
             correct: 1,
-            explication: "Le rachat avec SolarBoost est d'environ 4 c€ / kWh (aligné avec la prime mais souvent avec des boosters selon l'offre contractuelle)."
+            explication: "Le rachat avec SolarBoost est d'environ 4 c€ / kWh (fixe sur 3 ans, ce qui est très compétitif face au nouveau tarif EDF OA de 1,1 c€/kWh HT depuis juin 2026)."
         },
         {
             question: "Quelle promesse commerciale forte est portée par l'offre SolarBoost ?",
@@ -558,24 +558,24 @@ document.addEventListener('DOMContentLoaded', () => {
             explication: "L'installation remplit tous les critères (logement > 2 ans, puissance ≤ 9 kWc, installateur RGE, et domotique énergétique associée/EMS) pour bénéficier du taux super-réduit à 5,5 %."
         },
         {
-            question: "À combien s'élève la prime à l'autoconsommation de l'État au 1er trimestre 2026 pour une installation jusqu'à 9 kWc ?",
+            question: "Depuis le 5 juin 2026 (arrêté du 1er juin 2026), quel est le statut de la prime à l'autoconsommation ?",
             options: [
-                "140 € / kWc",
-                "80 € / kWc",
-                "80 € pour toute l'installation"
+                "Elle a doublé pour encourager la transition",
+                "Elle a été totalement supprimée pour les nouvelles demandes",
+                "Elle n'est disponible qu'avec une batterie physique"
             ],
             correct: 1,
-            explication: "Selon le barème CRE du 1er trimestre 2026, la prime est de 80 €/kWc pour les installations ≤ 9 kWc."
+            explication: "L'arrêté du 1er juin 2026 a supprimé la prime à l'autoconsommation pour toutes les nouvelles demandes à compter du 5 juin 2026."
         },
         {
-            question: "Comment est versée la prime à l'autoconsommation aujourd'hui ?",
+            question: "Pour les dossiers éligibles déposés avant le 5 juin 2026, comment est versée la prime à l'autoconsommation ?",
             options: [
                 "Sur 5 ans à chaque anniversaire de connexion (pour toutes les puissances)",
                 "En une fois si puissance ≤ 9 kWc, sinon 80% la 1ère année puis 5%/an sur 4 ans",
                 "Déduite du devis de l'artisan immédiatement"
             ],
             correct: 1,
-            explication: "Le versement se fait en 1 fois pour les installations ≤ 9 kWc, et en plusieurs fois (80% puis 4x5%) pour les plus grandes."
+            explication: "Pour les anciens dossiers, le versement se fait en 1 fois pour les installations ≤ 9 kWc, et en plusieurs fois (80% puis 4x5%) pour les plus grandes."
         },
         {
             question: "Si un client vend la TOTALITÉ de sa production (Vente Totale), touche-t-il la prime à l'autoconsommation ?",
